@@ -27,7 +27,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'mdeditor',
 ]
+
+# mdeditor追加用(Djangoバージョン3.0以上の場合のみ)
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
+# mdeditor中国語→英語化(日本語非対応のため)
+MDEDITOR_CONFIGS = {
+    'default': {
+        'language': 'en',
+    }
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -45,7 +56,7 @@ ROOT_URLCONF = 'myblog.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), os.path.join(BASE_DIR, 'templatetags')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load markdown_extras %}
 {% block content %}
 <main class="col-md-8">
     <article class="blog-area">
@@ -12,7 +13,7 @@
         <!-- <a href="{% url 'blog:post_detail' post.id %}">
             <img class="card-img-top" src="{{ post.image.url }}" alt="{{ post.title }}">
         </a> -->
-        {{ object.content|safe }}
+        <div id='content'>{{ object.content|markdown|safe }}</div>
     </article>
     <article class="comment-area">
         <a class="btn btn-primary my-3" href="{% url 'blog:comment_form' post.pk %}">コメントを投稿する</a>

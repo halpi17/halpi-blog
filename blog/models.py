@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
 
+from mdeditor.fields import MDTextField  # mdeditor用
+
 # Create your models here.
 class Category(models.Model):
     name = models.CharField(max_length=255)
@@ -25,7 +27,7 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete=models.PROTECT)
     tags = models.ManyToManyField(Tag, blank=True)
     title = models.CharField(max_length=255)
-    content = models.TextField()
+    content = MDTextField()  # mdeditor用に追加
     description = models.TextField(blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
