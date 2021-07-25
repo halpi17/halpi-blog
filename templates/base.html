@@ -15,12 +15,16 @@
         <link href="{% static 'mdeditor/css/editormd.min.css' %}" rel="stylesheet">
         <link href="{% static 'mdeditor/css/editormd.preview.css' %}" rel="stylesheet">
 
+        <!-- footer用css -->
+        <link rel="stylesheet" href="{% static 'css/footer.css' %}">
     </head>
     <body>
         {% include "base/navbar.html" %}
 
         {% block content %}
         {% endblock %}
+
+        {% include "base/footer.html" %}
 
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
