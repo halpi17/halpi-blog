@@ -6,8 +6,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
-# ALLOWED_HOSTS = ['halpi-blog.herokuapp.com', '.herokuapp.com', '.halpi17.com']
+# ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['halpi17.com', '.halpi17.com']
 
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
