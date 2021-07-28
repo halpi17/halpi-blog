@@ -12,3 +12,6 @@ ALLOWED_HOSTS = ['halpi17.com', '.halpi17.com']
 import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
+
+# SECURE_SSL_REDIRECT = True
+# SECURE_PROXY_SSL_HEADER = ('X-Forwarded-Proto', 'https')
