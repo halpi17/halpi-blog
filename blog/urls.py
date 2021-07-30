@@ -3,6 +3,8 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
+from django.views.static import serve  #追加
+
 from blog.views import (
     IndexView,
     PostDetailView,
@@ -34,6 +36,7 @@ urlpatterns = [
     path('reply/<int:pk>/', ReplyFormView.as_view(), name='reply_form'),
     path('reply/<int:pk>/approve/', reply_approve, name='reply_approve'),
     path('reply/<int:pk>/remove/', reply_remove, name='reply_remove'),
+    path(r'^media/(?P<path>.*)$', serve, {'document_root': settings.MEDIA_ROOT}),  #追加
 ]
 
 if settings.DEBUG:
