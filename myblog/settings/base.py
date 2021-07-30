@@ -28,6 +28,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mdeditor',
+    'cloudinary',
+    'cloudinary_storage',
 ]
 
 # mdeditor追加用(Djangoバージョン3.0以上の場合のみ)
