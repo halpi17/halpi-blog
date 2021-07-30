@@ -27,8 +27,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'cloudinary',
-    'cloudinary_storage',
     'mdeditor',
 ]
 
@@ -137,3 +135,11 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Django & Heroku 画像用
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hrn30xup8',
+    'API_KEY': '429999974535526',
+    'API_SECRET': 'JszbV5cjJ0QQX7Lvnl0_FmPl2B0'
+}
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
