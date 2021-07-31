@@ -19,7 +19,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__fil
 # Application definition
 
 INSTALLED_APPS = [
-    # 'whitenoise.runserver_nostatic',
+    'whitenoise.runserver_nostatic',
     'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
