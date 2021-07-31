@@ -1,7 +1,7 @@
 from django.urls import path
 
 from django.conf import settings
-from django.conf.urls import url, include
+from django.conf.urls import include
 from django.conf.urls.static import static
 
 from blog.views import (
@@ -35,7 +35,7 @@ urlpatterns = [
     path('reply/<int:pk>/', ReplyFormView.as_view(), name='reply_form'),
     path('reply/<int:pk>/approve/', reply_approve, name='reply_approve'),
     path('reply/<int:pk>/remove/', reply_remove, name='reply_remove'),
-    url(r'mdeditor/', include('mdeditor.urls')) # 追加
+    path('mdeditor/', include('mdeditor.urls')) # 追加
 ]
 
 if settings.DEBUG:
