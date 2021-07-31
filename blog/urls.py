@@ -36,5 +36,5 @@ urlpatterns = [
     path('reply/<int:pk>/remove/', reply_remove, name='reply_remove'),
 ]
 
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
