@@ -4,7 +4,7 @@
 <main class="col-md-8 container">
     <article class="blog-area">
         <h1>{{ object.title }}</h1>
-        <p>{{ object.published_at|date }}</p>
+        <p>{{ object.published_at }}</p>
         <p>{{ object.category.name }}</p>
         {% for tag in object.tags.all %}
         <div>#{{ tag.name }}</div>
